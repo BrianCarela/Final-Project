@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>animation learning</title>
+	<style type="text/css">
+		#myContainer{
+			width: 400px;
+			height: 400px;
+			position: relative;
+			background-color: teal;
+		}
+		#myAnimation{
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<h1>My First Javacript Animation</h1>
+	<div id="myContainer">
+	<div id="myAnimation">My animation will go here</div>
+	</div>
+	<button onclick="Move()">LET'S GOOO</button>
+	<script type="text/javascript">
+	function Move() {
+			var elem = document.getElementById('myAnimation'); 
+			var pos = 0; //means position
+			var id = setInterval(frame, 5);//setInterval is predefined, can only be used in a variable. bigger number, slower animation.
+
+		function frame() {
+			if (pos == 350) { //if it reaches position 350...
+				clearInterval(id); // stop animation
+			}
+			else{ //if it hasn't hit the final position, move position incremently
+				pos++
+				elem.style.top = pos + 'px'; //change style of small div, from the top
+				elem.style.left = pos + 'px'; // change it from the left
+			}
+		}
+	}
+	</script>
+</body>
+</html>
