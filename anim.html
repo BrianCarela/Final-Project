@@ -20,18 +20,18 @@
 <body>
 	<h1>My First Javacript Animation</h1>
 	<div id="myContainer">
-	<div id="myAnimation">My animation will go here</div>
+		<div id="myAnimation"></div>
 	</div>
 	<button onclick="Move()">LET'S GOOO</button>
 	<script type="text/javascript">
 	function Move() {
-			var elem = document.getElementById('myAnimation'); 
+			var elem = document.getElementById('myAnimation');//the element
 			var pos = 0; //means position
-			var id = setInterval(frame, 5);//setInterval is predefined, can only be used in a variable. bigger number, slower animation.
+			var id = setInterval(frame, 5);//setInterval is predefined, can only be used in a variable. bigger number, slower animation. *begins the animation*
 
 		function frame() {
 			if (pos == 350) { //if it reaches position 350...
-				clearInterval(id); // stop animation
+				clearInterval(id); // stops animation
 			}
 			else{ //if it hasn't hit the final position, move position incremently
 				pos++
